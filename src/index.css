@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-ivory: #F7F0E5;
+    --color-cream: #FCF8F1;
+    --color-terracotta: #D98261;
+    --color-terracotta-dark: #B96E42;
+    --color-espresso: #483329;
+    --color-olive: #A6A77A;
+    --color-sand: #E6D5C1;
+    --color-sand-light: #F2E8DC;
+    --color-ink: #29231F;
+    --font-serif: "Cormorant Garamond", Georgia, serif;
+    --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+  }
+
+  body {
+    background-color: #F7F0E5;
+    color: #29231F;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom Editorial Typography Classes */
+.font-editorial {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-feature-settings: "liga" 1, "dlig" 1;
+}
+
+/* Tactile 3D Paper & Surface Effects with Ambient Depth */
+.paper-card {
+  background-color: #FCF8F1;
+  border: 1px solid #E6D5C1;
+  box-shadow: 
+    0 1px 2px rgba(41, 35, 31, 0.03),
+    0 4px 16px -2px rgba(72, 51, 41, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+
+.paper-card-elevated {
+  background-color: #FCF8F1;
+  border: 1px solid #E6D5C1;
+  box-shadow: 
+    0 1px 3px rgba(41, 35, 31, 0.04),
+    0 12px 32px -4px rgba(72, 51, 41, 0.1),
+    0 4px 12px -2px rgba(72, 51, 41, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 2px 4px rgba(41, 35, 31, 0.04),
+    0 14px 30px -4px rgba(72, 51, 41, 0.11),
+    0 6px 14px -2px rgba(72, 51, 41, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border-color: #D98261;
+}
+
+/* Tactile Button Press */
+.tactile-button {
+  box-shadow: 0 2px 6px -1px rgba(217, 130, 97, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.tactile-button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 1px 2px rgba(217, 130, 97, 0.2);
+}
+
+/* 3D Perspective Container */
+.perspective-container {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Inset Tactile Well */
+.paper-inset {
+  background-color: #F7F0E5;
+  border: 1px solid #E6D5C1;
+  box-shadow: inset 0 2px 5px 0 rgba(72, 51, 41, 0.06);
+}
+
+/* Smooth Warm Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F0E5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E6D5C1;
+  border-radius: 9999px;
+  border: 1px solid #F7F0E5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D98261;
+}
+
+/* Warm Ambient Glows */
+.warm-glow {
+  box-shadow: 0 0 28px -4px rgba(217, 130, 97, 0.4);
+}
+
+/* Tabular figures */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .paper-card,
+  .paper-card-elevated,
+  .preserve-3d {
+    transition: none !important;
+    transform: none !important;
+  }
+}
